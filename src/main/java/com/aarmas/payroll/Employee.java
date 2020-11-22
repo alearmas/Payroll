@@ -35,15 +35,12 @@ public class Employee {
     public Long getId() {
         return this.id;
     }
-
     public String getFirstName() {
         return this.firstName;
     }
-
     public String getLastName() {
         return this.lastName;
     }
-
     public String getRole() {
         return this.role;
     }
@@ -51,22 +48,18 @@ public class Employee {
     public void setId(Long id) {
         this.id = id;
     }
-
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
-
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-
     public void setRole(String role) {
         this.role = role;
     }
 
     @Override
     public boolean equals(Object o) {
-
         if (this == o)
             return true;
         if (!(o instanceof Employee))

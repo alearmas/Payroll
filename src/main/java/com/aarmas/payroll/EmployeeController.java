@@ -1,9 +1,16 @@
 package com.aarmas.payroll;
 
+import org.springframework.hateoas.CollectionModel;
+import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.IanaLinkRelations;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.hateoas.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
+
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @RestController // Indicates that the data returned by each method will be written straight into the response body instead of rendering a template.
 public class EmployeeController {
@@ -13,10 +20,6 @@ public class EmployeeController {
     EmployeeController(EmployeeRepository repository, EmployeeModelAssembler assembler) {
         this.repository = repository;
         this.assembler = assembler;
-    }
-
-    EmployeeController(EmployeeRepository repository) {
-        this.repository = repository;
     }
 
     @GetMapping("/employees")
